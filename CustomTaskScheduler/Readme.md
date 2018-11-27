@@ -45,3 +45,4 @@ However, imagine the case that the Main() is a GUI application. When it hits the
 So, what we have seen is that the remainder part of function can be scheduled on the thread with GUI context (i.e GUI thread), HTTP request context or any thread from the ThreadPool in case no context in required. [This blog](http://blog.stephencleary.com/2012/02/async-and-await.html) by Stephen Cleary explains the async, await and awaitable in more detail.
 
 #### How does await tell the awaitable to run the rest of the function when it completes?
+The remainder code is kind of chained with the awaitable by using something like ContinueWith(). [This stackoverflow post](https://stackoverflow.com/questions/8767218/is-async-await-keyword-equivalent-to-a-continuewith-lambda) explains this in detail.
